@@ -248,13 +248,17 @@ fig_nation8 = px.bar(
     df,
     x="nation_group",
     y="total_audi",
-    color="movieNm",
+    color="nation_group",
     hover_name="movieNm",
-    color_discrete_sequence=px.colors.qualitative.Alphabet,
+    color_discrete_map={"한국 영화": "#EF553B", "외국 영화": "#636EFA"},
     labels={"nation_group": "", "total_audi": "총 관객수"},
     title="국가별 총 관객수 비교 [한국 영화 vs 외국 영화]",
 )
-fig_nation8.update_traces(hovertemplate="영화명: %{hovertext}<br>총 관객수: %{y:,.0f}명<extra></extra>")
+fig_nation8.update_traces(
+    hovertemplate="영화명: %{hovertext}<br>총 관객수: %{y:,.0f}명<extra></extra>",
+    marker_line_color="white",
+    marker_line_width=0.5,
+)
 fig_nation8.update_layout(showlegend=False, yaxis_title="총 관객수", xaxis_title="")
 st.plotly_chart(fig_nation8, use_container_width=True)
 
