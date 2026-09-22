@@ -252,7 +252,7 @@ fig_nation8 = px.bar(
     hover_name="movieNm",
     color_discrete_map={"한국 영화": "#EF553B", "외국 영화": "#636EFA"},
     labels={"nation_group": "", "total_audi": "총 관객수"},
-    title="국가별 총 관객수 비교 [한국 영화 vs 외국 영화]",
+    title="한국 영화와 외국 영화의 총 관객수 비교",
 )
 fig_nation8.update_traces(
     hovertemplate="영화명: %{hovertext}<br>총 관객수: %{y:,.0f}명<extra></extra>",
